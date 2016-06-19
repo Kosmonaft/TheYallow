@@ -1,0 +1,339 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass";
+@import "compass/reset";
+@import "compass/css3";
+@import "partials/variables";
+@import "partials/mixins";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@include font-face("SegeoWPLight", "../fonts/segeo-wp-light");
+@include font-face("PTSansRegular","../fonts/pt-sans.regular");
+@include font-face("SegoeWPN", "../fonts/SegoeWPN");
+
+
+body{
+    color:#fff;
+    min-width: 640px;
+}
+
+h2{
+    font-family: "PTSansRegular";
+    font-size:37px;
+    margin:35px 0 10px -15px;
+    text-transform: uppercase;
+}
+
+.animation *{
+    @include transition(0.5s);
+}
+
+.wrapper{
+    width: 100%;
+
+    .container{
+        width:640px;
+        margin:0 auto;
+        position:relative;
+    }
+    .dark-orange-bg{
+        background: $darkOrangeBg;
+
+        p{
+            margin:24px 0;
+            font-size:29.5px;
+        }
+    }
+
+    .slider{
+        font-family: "SegeoWPLight";
+        padding:8px 8px 10px 9px;
+
+        .dark-orange-bg{
+            width: 299px ;
+            margin-right:9px;
+        }
+        .col-xs-6{
+            padding:0;
+            p{
+                margin:15px 0 0 27px ;
+                width: 235px;
+                word-break: break-all;
+                line-height: 33px;
+            }
+
+            &.video-box{
+                width:315px;
+
+                img{
+                    height:233px !important;
+                }
+            }
+        }
+        .plus-icon img{
+            position:relative;
+            left:92%;
+            top:-16px;
+        }
+    }
+
+    @media (min-width: $screen-sm-min) {
+        -webkit-box-shadow: inset 0px 3px 4px 0px rgba(50, 50, 50, 0.4);
+        -moz-box-shadow:    inset 0px 3px 4px 0px rgba(50, 50, 50, 0.4);
+        box-shadow:         inset 0px 3px 4px 0px rgba(50, 50, 50, 0.4);
+        background: url("../../img/wrapper-bg.jpg") -9px repeat;
+
+        .container{
+            width: 760px;
+            background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 80%); /* FF3.6-15 */
+            background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.35) 0%,rgba(255,255,255,0) 80%); /* Chrome10-25,Safari5.1-6 */
+            background: radial-gradient(ellipse at center,  rgba(255,255,255,0.35) 0%,rgba(255,255,255,0) 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0.35 ); /* IE6-9 fallback on horizontal gradient */
+        }
+
+        .slider {
+            padding:0px;
+            margin:35px -15px 35px -15px;
+            .dark-orange-bg {
+                width:341px;
+                margin-right: 0px;
+
+                p {
+                    margin: 21px 0;
+                    font-size: 29px;
+                }
+            }
+
+            .col-sm-10{
+                width:656px;
+            }
+            .col-sm-5 {
+                height: 233px;
+                p {
+                    font-size: 29.05px;
+                    width: 270px;
+                    line-height: 38px;
+                    margin: 15px 0 0 30px;
+                }
+
+                &.video-box{
+                }
+
+            }
+
+            .twitter{
+                /*margin:0 -10px;*/
+                height: 233px;
+                float:right;
+                width:100px;
+                overflow: hidden;
+                span{
+                    margin:10px 0 0 0;
+                }
+
+                img.twitter-logo{
+                    width:80px;
+                    margin:50px 0;
+                }
+                .plus-icon{
+                    margin:8px 0 0 0;
+                }
+            }
+        }
+
+    }
+
+    @media (min-width: $screen-md-min) {
+
+        .container{
+            width:990px;
+        }
+
+        .slider{
+
+            .plus-icon{
+                margin:9px 0 0 0;
+                img{
+                    top:-13px;
+                }
+            }
+
+            .twitter{
+                width:330px;
+                height:233px;
+                &.col-lg-4{
+                    float:right;
+                }
+
+                span{
+                    font-size:26px;
+                    margin: 9px 3px 0 0;
+                    font-family: "SegeoWPLight";
+                }
+
+                img.twitter-logo {
+                    margin: 59px 0 0 69px;
+                    width:159px;
+                }
+                .plus-icon{
+                    margin:22px 0 0  0;
+                    img{
+                        left:98%;
+                        top:-11px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: $screen-lg-min) {
+
+        .container{
+            width:1020px;
+        }
+
+
+        .slider {
+            .dark-orange-bg {
+                @include transition(0.4s);
+            }
+
+
+        }
+
+        .event-date{
+            background: #ddb101;
+            font-family: "SegoeWPN";
+            padding:1px 0 0 0;
+            p{
+                width:100%;
+                text-align: center;
+                text-transform: uppercase;
+                margin:0;
+            }
+            .date{
+                color:#fff;
+                font-size:50px;
+                font-weight: bold;
+                line-height: 61px;
+            }
+            .month{
+                color:#b26529;
+                font-size:21px;
+                top: -4px;
+                line-height: 21px;
+                position: relative;
+                margin-bottom:3px;
+
+            }
+        }
+    }
+
+
+    &.light-orange-bg{
+        background: $lightOrangeBg;
+    }
+
+    &.twitter{
+        @include transition(0.4s);
+        img{
+            position: relative;
+            margin: 36px 0 0 86px;
+            width: 159px;
+            display: block;
+        }
+
+
+        .container{
+            padding:24px 0 0 0;
+        }
+
+        .tweet-wall{
+            width:275px;
+            padding:0 0 0 4px;
+
+        }
+        .tweet-cloud{
+            color:#8f8e8e;
+            font-size:13px;
+            margin-bottom:14px;
+            padding-left: 9px;
+            width:284px;
+            background-position: 0 22px !important;
+
+
+            div{
+                @include rounded( 9px);
+            }
+            p{
+                margin:0 0 0 19px;
+                padding:7px 0 5px 0;
+                width:217px;
+                line-height: 15px;
+
+            }
+            &.first{
+                background: url("../../img/first-cloud.png") no-repeat;
+                div {
+                    background: #fff;
+                }
+                margin-bottom:13px;
+            }
+
+            &.second {
+                p{
+                    padding:8px 0 5px 0;
+                }
+                background: url("../../img/second-cloud.png") no-repeat;
+                div {
+                    background-color: $veryLightYellow;
+                }
+
+            }
+
+            &.third{
+                background: url("../../img/third-cloud.png") no-repeat;
+                div {
+                    background: $lightYellow;
+                }
+         }
+        }
+        .new-tweet{
+            height:29px;
+            border:solid 1px #d0a806;
+            margin-left: 12px;
+            margin-bottom:10px;
+            width:272px;
+            @include rounded( 9px);
+
+            input {
+                height:29px;
+                width:200px;
+                -webkit-border-bottom-left-radius: 9px;
+                -moz-border-radius-bottomleft: 9px;
+                border-bottom-left-radius: 9px;
+                -webkit-border-top-left-radius: 9px;
+                -moz-border-radius-topleft: 9px;
+                border-top-left-radius: 9px;
+            }
+
+            button{
+                height:29px;
+                width:70px;
+                padding:0;
+                background: #e7a623;
+                color:#fff;
+                border-top-right-radius: 9px;
+                -moz-border-radius-topright: 9px;
+                -webkit-border-top-right-radius: 9px;
+                border-bottom-right-radius: 9px;
+                -moz-border-radius-bottomright: 9px;
+                -webkit-border-bottom-right-radius: 9px;
+            }
+        }
+    }
+
+}
